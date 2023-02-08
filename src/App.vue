@@ -14,6 +14,7 @@
     arr1: ['x', 'y', 'z'], 
     arr2: [1, 2, 3], 
     obj: {x: 1, y: 2, z: 3},
+    date : '2',
 	}
 },
 methods: { 
@@ -22,7 +23,15 @@ methods: {
  },
  summ: function() {
   alert(this.num1 + this.num2)
- }
+ },
+ data: function(){
+let date = this.dayOfWeek(this.date);
+alert(date);
+},
+dayOfWeek: function(date){
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+return days[date-1];
+},
 }
   }
   let today = new Date(); 
@@ -42,7 +51,8 @@ methods: {
     <p class="sc">Выведем сумму элементов obj : {{obj.x + obj.y + obj.z}} </p>
     <button class="button button1" @click="show">Узнать дату(нажать)</button> <br> 
     <button class="button button2" @mouseenter="show"> Узнать дату(навестись)</button> 
-  </div>
+    <button class="button button1" @click="date">Узнать день недели по числу({{ date }})</button>
+</div>
 </template>
 
 <style >
