@@ -19,6 +19,9 @@
 methods: { 
  show: function() { 
   alert(today); 
+ },
+ summ: function() {
+  alert(this.num1 + this.num2)
  }
 }
   }
@@ -26,6 +29,7 @@ methods: {
 </script>
 
 <template>
+   {{ summ() }}
   <div>
 		<h1> vue exercises :)</h1>
 	</div>
