@@ -3,6 +3,9 @@
     data() {
 	return {
 		name: 'чебупели',
+    attr: 'che.jpg',
+    text: 'page',
+		href: 'page.html',
 	}
 }
   }
@@ -10,10 +13,12 @@
 
 <template>
   <div>
-		<h1> Vue exercises :)</h1>
+		<h1> vue exercises :)</h1>
 	</div>
   <br>
+  <img :src="attr">
   <div> <p> {{ name }}</p>
+    <p>купи меня пожалуйста <a href="page.html">тут</a></p>
   </div>
 </template>
 
