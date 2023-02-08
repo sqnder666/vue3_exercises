@@ -15,6 +15,13 @@
     arr2: [1, 2, 3], 
     obj: {x: 1, y: 2, z: 3},
     date : '2',
+    cost: '1760',
+    amount: '98',
+	}
+},
+computed: {
+	price: function() {
+		return this.cost *  this.amount;
 	}
 },
 methods: { 
@@ -41,6 +48,9 @@ change: function(){
   change2: function(){
     this.text1 = 'свинина'
   },
+  change3: function(){
+    this.cost = '45'
+  },
 }
   }
   let today = new Date(); 
@@ -58,13 +68,14 @@ change: function(){
     <p class="sc">Квадрат num равен {{num*num}}, А сумма num1,num2,num3 равна {{num1+num2+num3}}.</p>
     <p class="sc"> Выведем каждую букву из массива в отдельной строке: <br> {{arr1[0]}} <br> {{arr1[1]}} <br> {{arr1[2]}} <br> Теперь сумму элементов второго массива : {{arr2[0] + arr2[1] + arr2[2]}}</p>
     <p class="sc">Выведем сумму элементов obj : {{obj.x + obj.y + obj.z}} </p>
-    <button class="button button1" @click="show">Узнать дату(нажать)</button> <br> 
-    <button class="button button2" @mouseenter="show"> Узнать дату(навестись)</button> 
-    <button class="button button1" @click="date">Узнать день недели по числу({{ date }})</button>
+    <button class="button" @click="show">Узнать дату(нажать)</button> <br> 
+    <button class="button" @mouseenter="show"> Узнать дату(навестись)</button> 
+    <button class="button" @click="date">Узнать день недели по числу({{ date }})</button>
     <button class="button" @click="double(2)">Выведет квадрат числа 2</button>
     <button class="button" @click="double(3)">Выведет квадрат числа 3</button>
     <button class="button" @click="change">батон</button>
     <button class="button" @click="change2">свинина</button>
+    <button class="button" @click="change3">Меняем значение cost на 45</button>
 </div>
 </template>
 
