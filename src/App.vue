@@ -35,6 +35,12 @@ return days[date-1];
 double: function(str){
 alert(str*str);
 },
+change: function(){
+		this.text1 = 'батон';
+	},
+  change2: function(){
+    this.text1 = 'свинина'
+  },
 }
   }
   let today = new Date(); 
@@ -57,6 +63,8 @@ alert(str*str);
     <button class="button button1" @click="date">Узнать день недели по числу({{ date }})</button>
     <button class="button" @click="double(2)">Выведет квадрат числа 2</button>
     <button class="button" @click="double(3)">Выведет квадрат числа 3</button>
+    <button class="button" @click="change">батон</button>
+    <button class="button" @click="change2">свинина</button>
 </div>
 </template>
 
