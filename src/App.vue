@@ -3,9 +3,16 @@
     data() {
 	return {
 		name: 'чебупели',
+    surn: 'вкусные(наверное, не пробовал, просто слово смешное)',
     attr: 'che.jpg',
     text: 'page',
 		href: 'page.html',
+    num: 5,
+    num1: 1,
+		num2: 2,
+		num3: 3,
+    arr1: ['x', 'y', 'z'], 
+    arr2: [1, 2, 3], 
 	}
 }
   }
@@ -17,14 +24,21 @@
 	</div>
   <br>
   <img :src="attr">
-  <div> <p> {{ name }}</p>
+  <div> <p> {{ name }} {{ surn }}</p>
     <p>купи меня пожалуйста <a href="page.html">тут</a></p>
+    <p class="sc">Квадрат num равен {{num*num}}, А сумма num1,num2,num3 равна {{num1+num2+num3}}.</p>
+    <p class="sc"> Выведем каждую букву из массива в отдельной строке: <br> {{arr1[0]}} <br> {{arr1[1]}} <br> {{arr1[2]}} <br> Теперь сумму элементов второго массива : {{arr2[0] + arr2[1] + arr2[2]}}</p>
   </div>
 </template>
 
 <style >
 header {
   line-height: 1.5;
+}
+.sc {
+  font-size: medium;
+ color: black;
+ font-family: 'Lucida Sans Unicode','Lucida Grande','sans-serif';
 }
 p {
   line-height: 2;
