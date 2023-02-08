@@ -17,6 +17,8 @@
     date : '2',
     cost: '1760',
     amount: '98',
+    visible: true,
+    visible1: false,
 	}
 },
 computed: {
@@ -34,6 +36,9 @@ methods: {
  data: function(){
 let date = this.dayOfWeek(this.date);
 alert(date);
+},
+shor: function(){
+    alert(new Date().toLocaleDateString());
 },
 dayOfWeek: function(date){
 let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -78,6 +83,8 @@ change: function(){
     <button class="button" @click="change3">Меняем значение cost на 45</button>
     <a class="inline-link-1" href="https://www.minecraft.net/ru-ru/download" onclick="event.preventDefault()">Не сработает</a>
     <a @click.once="shor">Один раз</a>
+    <p class="button" v-if="visible">Видно</p>
+    <p v-if="visible1">Не Видно</p>
 </div>
 </template>
 
