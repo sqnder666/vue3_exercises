@@ -19,6 +19,8 @@
     amount: '98',
     visible: true,
     visible1: false,
+    hidden: true,
+    hidden1: false,
 	}
 },
 computed: {
@@ -81,10 +83,12 @@ change: function(){
     <button class="button" @click="change">батон</button>
     <button class="button" @click="change2">свинина</button>
     <button class="button" @click="change3">Меняем значение cost на 45</button>
-    <a class="inline-link-1" href="https://www.minecraft.net/ru-ru/download" onclick="event.preventDefault()">Не сработает</a>
-    <a @click.once="shor">Один раз</a>
+    <a class="inline-link-1, button" href="https://www.minecraft.net/ru-ru/download" onclick="event.preventDefault()">Не сработает</a>
+    <a class ="button" @click.once="shor">Один раз</a>
     <p class="button" v-if="visible">Видно</p>
-    <p v-if="visible1">Не Видно</p>
+    <p class="button" v-if="visible1">Не Видно</p>
+    <p class="button" v-if="hidden">баранина</p>
+    <p class="button" v-if="!hidden1">человечина</p>
 </div>
 </template>
 
