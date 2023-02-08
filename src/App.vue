@@ -36,10 +36,29 @@ methods: {
     <p class="sc">Квадрат num равен {{num*num}}, А сумма num1,num2,num3 равна {{num1+num2+num3}}.</p>
     <p class="sc"> Выведем каждую букву из массива в отдельной строке: <br> {{arr1[0]}} <br> {{arr1[1]}} <br> {{arr1[2]}} <br> Теперь сумму элементов второго массива : {{arr2[0] + arr2[1] + arr2[2]}}</p>
     <p class="sc">Выведем сумму элементов obj : {{obj.x + obj.y + obj.z}} </p>
+    <button class="button button1" @click="show">Узнать дату(нажать)</button> <br> 
+    <button class="button button2" @mouseenter="show"> Узнать дату(навестись)</button> 
   </div>
 </template>
 
 <style >
+
+.button {
+    background-color: #293133; 
+    border-radius: 8px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+
 header {
   line-height: 1.5;
 }
