@@ -252,14 +252,19 @@ change: function(){
   <button class="button" @click.once="delSecondToLast">Задание 4</button>
   <button class="button" @click.once="sortArr">Задание 5</button>
   <button class="button" @click.once="reverseOrder">Задание 6</button>
-  <ul v-for="elem in arr">
-    <li>{{ elem }}</li>
-  </ul><br>
+  <div class="r">
+    <ul v-for="elem in arr">
+      <li>{{ elem }}</li>
+    </ul><br>
+  </div>
 </div>
 </template>
 
 <style >
-table {
+.r {
+  border: 5px solid red;
+}
+.table {
     display: flex;
     justify-content: flex-start;
     flex-direction: column-reverse;
