@@ -165,7 +165,7 @@ change: function(){
 
 <style >
 .d {
-  background-color: #293133; 
+  background-color: #293134; 
     border-radius: 8px;
     border: none;
     color: rgb(255, 255, 255);
