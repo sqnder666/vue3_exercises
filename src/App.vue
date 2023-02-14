@@ -27,7 +27,7 @@
     vue21_1: true,
     cdr: true,
     day: 'Среда',
-    
+    age: 18,
 	}
 },
 computed: {
@@ -141,6 +141,9 @@ change: function(){
     <p class="d" v-if="day === 'Пятница'">Пятница</p>
     <p class="d" v-if="day === 'Суббота'">Суббота</p>
     <p class="d" v-if="day === 'Воскресенье'">Воскресенье</p>
+    <p class="button" v-if="age <= 18">Подросток</p>
+    <p class="button" v-else-if="19 < age && age < 25">Молодой человек</p>
+    <p class="button" v-else="age > 26">Мужчина</p>
 
 </div>
 </template>
