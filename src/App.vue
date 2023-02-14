@@ -29,6 +29,7 @@
     day: 'Среда',
     age: 18,
     vue25: true,
+    items: [1, 2, 3, 4, 5],
 	}
 },
 computed: {
@@ -153,7 +154,12 @@ change: function(){
     <p>+++</p>
     <p>+++</p>
     <p>+++</p>
-  </div>
+      </div>
+      <div v-for="elem in items">{{ elem }}</div>
+    <br>
+    <div v-for="elem in items">{{ elem*elem }}</div>
+    <br>
+    <ul v-for="elem in items">{{ elem }}</ul>
 </div>
 </template>
 
