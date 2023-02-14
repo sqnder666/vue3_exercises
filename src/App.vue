@@ -25,6 +25,7 @@
     vue20_2: true,
     vue20_3: true,
     vue21_1: true,
+    cdr: true,
 	}
 },
 computed: {
@@ -128,6 +129,8 @@ change: function(){
     <button class="button" @click="toggle1">
 		{{ vue21_1 ? 'hide' : 'show' }}
   </button>
+  <p v-if="cdr">ахаха бабаба</p>
+    <p v-else>бабаба ахаха</p>
 
 </div>
 </template>
