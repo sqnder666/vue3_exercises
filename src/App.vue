@@ -28,6 +28,7 @@
     cdr: true,
     day: 'Среда',
     age: 18,
+    vue25: true,
 	}
 },
 computed: {
@@ -85,6 +86,9 @@ change: function(){
   },
   toggle1: function() {
 	this.vue21_1 = !this.vue21_1;
+  },
+  hide3: function(){
+  this.vue25 = false;
   },
 }
   }
@@ -144,7 +148,12 @@ change: function(){
     <p class="button" v-if="age <= 18">Подросток</p>
     <p class="button" v-else-if="19 < age && age < 25">Молодой человек</p>
     <p class="button" v-else="age > 26">Мужчина</p>
-
+    <button class="button" @click="hide3">hide3</button>
+    <div v-if="vue25">
+    <p>+++</p>
+    <p>+++</p>
+    <p>+++</p>
+  </div>
 </div>
 </template>
 
