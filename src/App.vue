@@ -26,6 +26,8 @@
     vue20_3: true,
     vue21_1: true,
     cdr: true,
+    day: 'Среда',
+    
 	}
 },
 computed: {
@@ -54,7 +56,7 @@ shor: function(){
     alert(new Date().toLocaleDateString());
 },
 dayOfWeek: function(date){
-let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
 return days[date-1];
 },
 double: function(str){
@@ -131,11 +133,34 @@ change: function(){
   </button>
   <p v-if="cdr">ахаха бабаба</p>
     <p v-else>бабаба ахаха</p>
+    {{ dayOfWeekDigit }}
+    <p class="d" v-if="day === 'Понедельник'">Понедельник</p>
+    <p class="d" v-if="day === 'Вторник'">Вторник</p>
+    <p class="d" v-if="day === 'Среда'">Среда</p>
+    <p class="d" v-if="day === 'Четверг'">Четверг</p>
+    <p class="d" v-if="day === 'Пятница'">Пятница</p>
+    <p class="d" v-if="day === 'Суббота'">Суббота</p>
+    <p class="d" v-if="day === 'Воскресенье'">Воскресенье</p>
 
 </div>
 </template>
 
 <style >
+.d {
+  background-color: #293133; 
+    border-radius: 8px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
 
 .button {
     background-color: #293133; 
