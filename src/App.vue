@@ -181,6 +181,13 @@ change: function(){
     <ul>
       <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index+1 }}</li>
     </ul>
+    <div v-for="elem in items">
+  <p >{{ elem }}</p>
+  </div>
+  <br>
+  <ul v-for="elem in items">
+    <li>{{ elem }}</li>
+  </ul>
 </div>
 </template>
 
