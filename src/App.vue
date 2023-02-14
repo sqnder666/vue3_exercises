@@ -29,7 +29,7 @@
     day: 'Среда',
     age: 18,
     vue25: true,
-    items: [1, 2, 3, 4, 5],
+    items: [1, -2, 3, -4, 5],
     arr: ['pudge', 'sf', 'io'],
     obj: {pudge:'100$', sf:'200$', io:'300$'},
     hrefs: [
@@ -221,10 +221,19 @@ change: function(){
     </tr>
   </table>
   <p v-for="num in 30">{{ num }}&nbsp;</p>
+  <div v-for="item in items">
+    <p v-if="item >= 0">{{ item }}&nbsp;</p>
+  </div>
 </div>
 </template>
 
 <style >
+table {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+  }
+
 .d {
   background-color: #293134; 
     border-radius: 8px;
