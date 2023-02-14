@@ -64,8 +64,20 @@ change: function(){
   change3: function(){
     this.cost = '45'
   },
+  toggle: function() {
+	this.visible = !this.visible;
+  },
+  toggle1: function() {
+	this.vue20_1 = !this.vue20_1;
+  },
+  toggle2: function() {
+	this.vue20_2 = !this.vue20_2;
+  },
+  toggle3: function() {
+	this.vue20_3 = !this.vue20_3;
 }
   }
+}
   let today = new Date(); 
 </script>
 
@@ -96,6 +108,16 @@ change: function(){
     <p class="button" v-if="hidden">баранина</p>
     <p class="button" v-if="!hidden1">человечина</p>
     <p class="button" v-if="visible">что со мной не так</p>
+    <button class="button" @click="hide">Убрать абзац</button>
+	  <p v-if="visible">text</p>
+    <button class="button" @click="hide2">Вернуть абзац</button>
+	  <p v-if="visible">text</p>
+    <button class="button"  @click="toggle1">toggle1</button>
+	  <p v-if="vue20_1">абзац1</p>
+    <button class="button" @click="toggle2">toggle2</button>
+	  <p v-if="vue20_2">абзац2</p>
+    <button class="button" @click="toggle3">toggle3</button>
+	  <p v-if="vue20_3">абзац3</p>
 </div>
 </template>
 
