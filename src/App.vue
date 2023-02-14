@@ -30,6 +30,8 @@
     age: 18,
     vue25: true,
     items: [1, 2, 3, 4, 5],
+    arr: ['pudge', 'sf', 'io'],
+    obj: {pudge:'100$', sf:'200$', io:'300$'},
 	}
 },
 computed: {
@@ -160,6 +162,25 @@ change: function(){
     <div v-for="elem in items">{{ elem*elem }}</div>
     <br>
     <ul v-for="elem in items">{{ elem }}</ul>
+    <ul v-for="(elem, key) in arr"> {{ key }} {{ elem }}</ul>
+    <ul>
+    <li v-for="elem in obj">{{ elem }}</li>
+    </ul>
+    <br>
+    <br>
+    <ul>
+      <li v-for="(key, elem) in obj"> {{ elem }} - {{ key }}</li>
+    </ul>
+    <br>
+    <br>
+    <ul>
+      <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index }}</li>
+    </ul>
+    <br>
+    <br>
+    <ul>
+      <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index+1 }}</li>
+    </ul>
 </div>
 </template>
 
