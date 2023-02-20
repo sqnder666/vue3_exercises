@@ -2,25 +2,55 @@
 export default {
   data() {
     return {
-      isDisabled: false,
+      var_1: "task1",
+      isCtrlPressed: false,
+      var_2: "ahhaha",
     };
   },
-  methods: {},
+  methods: {
+    lag: function () {
+      this.var_1 = this.$refs.textField.value;
+    },
+    leg: function (event) {
+      if (event.ctrlKey) {
+        this.isCtrlPressed = true;
+      }
+    },
+    handleLeftClick: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "left";
+      }
+    },
+    handleRightClick: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "right";
+      }
+    },
+    handleMiddleClick: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "middle";
+      }
+    },
+  },
 };
 </script>
 <template>
-  <input
-    type="checkbox"
-    :checked="isDisabled"
-    @click="($event) => (this.isDisabled = !this.isDisabled)"
-  />
+  <input class="button" type="text" @keyup.enter="lag" ref="textField" />
   &nbsp;
-  <button class="button"
-    v-bind:disabled="!isDisabled"
-    @click="($event) => (this.isDisabled = !this.isDisabled)"
+  <p>{{ var_1 }}</p>
+  &nbsp;
+  <a
+  class="button"
+    href="https://www.youtube.com/watch?v=xX7kjETpcEM"
+    @click="leg"
+    @click.left="handleLeftClick"
+    @click.right="handleRightClick"
+    @click.middle="handleMiddleClick"
+    target="_blank"
+    >tasks2,3</a
   >
-    {{ isDisabled ? "input is enabled" : "input is disabled" }}
-  </button>
+  &nbsp;
+  <p v-if="isCtrlPressed">{{ var_2 }}</p>
 </template>
 <style>
 .button {
