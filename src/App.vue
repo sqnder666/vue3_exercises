@@ -2,16 +2,22 @@
 export default {
   data() {
     return {
-      checked: true,
+      languages: [],
     };
   },
   methods: {},
 };
 </script>
 <template>
-  <input type="checkbox" v-model="checked" />
-  &nbsp;
-  <p class="button" v-if="checked">{{ checked }}</p>
+  <input class="button" type="checkbox" v-model="languages" value="никакой" />
+  <p>никакой</p>
+  <input class="button" type="checkbox" v-model="languages" value="русский" />
+  <p>русский</p>
+  <input class="button" type="checkbox" v-model="languages" value="армянский" />
+  <p>армянский</p>
+  <ul v-for="elem in languages">
+    <li>{{ elem }}</li>
+  </ul>
 </template>
 <style>
 .button {
