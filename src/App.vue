@@ -1,19 +1,20 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      name: "task",
+      surname: 1,
+    };
   },
   methods: {},
 };
 </script>
 <template>
-  <p class="button" :style="{ color: 'green', background: 'yellow', fontSize: '30px' }">
-    Задание 1
-  </p>
-  &nbsp; &nbsp; &nbsp;
-  <p class="button" :style="{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '30px' }">
-    Задание 2
-  </p>
+  <input type="text" v-model="name" />
+  <p class="button">{{ name }}</p>
+  <p class="button">{{ name.toUpperCase() }}</p>
+  <input type="number" v-model="surname" />
+  <p class="button">{{ surname ** 2 }}</p>
 </template>
 <style>
 .button {
