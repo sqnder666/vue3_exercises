@@ -2,9 +2,8 @@
 export default {
   data() {
     return {
-      obj: {
-        hidden: true,
-      },
+      isValid: true,
+      isDisabled: true,
     };
   },
   methods: {
@@ -15,7 +14,7 @@ export default {
 };
 </script>
 <template>
-<p class="button" :class="{active: true, valid: false,}">биг бой слайм</p>
+ <p class="button" :class="{ active: isValid, valid: isDisabled }">raw 2</p>
 </template>
 <style>
 .button {
