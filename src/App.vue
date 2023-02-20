@@ -12,21 +12,12 @@ export default {
       this.obj.hidden = !this.obj.hidden;
     },
   },
-}
+};
 </script>
 <template>
-  <button class="button" @click="this.obj.hidden = false">hide 2</button>
-  <button class="button" @click="this.obj.hidden = true">hide 3</button>
-  <button class="button" @click="setDone">{{ obj.hidden ? "show" : "hide" }} 4</button><br />
-  <p>&6hjhjhj;&6hjhjhj;&6hjhjhj;&6hjhjhj;</p>
-  <p :class="obj"> 1</p>
+<p class="button" :class="{active: true, valid: false,}">биг бой слайм</p>
 </template>
 <style>
-
-p.hidden {
-  display: none;
-} 
-
 .button {
     background-color: #293133; 
     border-radius: 8px;
@@ -42,13 +33,11 @@ p.hidden {
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
 }
-
-.done {
-  border: 5px solid black;
+.active {
+  border: 7px solid black;
+}
+.valid {
+  color: red;
 }
 
-.selected {
-  color: green;
-  font-size: 10em;
-}
 </style>
