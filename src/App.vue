@@ -14,6 +14,7 @@
     arr1: ['x', 'y', 'z'], 
     arr2: [1, 2, 3], 
     obj: {x: 1, y: 2, z: 3},
+    text: 'give me your heart',
     date : '2',
     cost: '1760',
     amount: '98',
@@ -30,6 +31,7 @@
     age: 18,
     vue25: true,
     items: [1, -2, 3, -4, 5],
+    cssClasses: "border: 5px solid red",
     /*arr: ['pudge', 'sf', 'io'],
     obj: {pudge:'100$', sf:'200$', io:'300$'},
     hrefs: [
@@ -193,6 +195,7 @@ change: function(){
     <p class="button" v-else-if="19 < age && age < 25">Молодой человек</p>
     <p class="button" v-else="age > 26">Мужчина</p>
     <button class="button" @click="hide3">hide3</button>
+    <p :style="cssClasses">text</p>
     <div v-if="vue25">
     <p>+++</p>
     <p>+++</p>
