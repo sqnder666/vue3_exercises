@@ -2,55 +2,29 @@
 export default {
   data() {
     return {
-      var_1: "task1",
-      isCtrlPressed: false,
-      var_2: "ahhaha",
+      newItem: "",
+      items: ["1", "2", "3", "4", "5"],
     };
   },
   methods: {
-    lag: function () {
-      this.var_1 = this.$refs.textField.value;
+    addItemEnd: function () {
+      this.items.push(this.newItem);
     },
-    leg: function (event) {
-      if (event.ctrlKey) {
-        this.isCtrlPressed = true;
-      }
-    },
-    handleLeftClick: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "left";
-      }
-    },
-    handleRightClick: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "right";
-      }
-    },
-    handleMiddleClick: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "middle";
-      }
+    addItemBegin: function () {
+      this.items.unshift(this.newItem);
     },
   },
 };
 </script>
 <template>
-  <input class="button" type="text" @keyup.enter="lag" ref="textField" />
-  &nbsp;
-  <p>{{ var_1 }}</p>
-  &nbsp;
-  <a
-  class="button"
-    href="https://www.youtube.com/watch?v=xX7kjETpcEM"
-    @click="leg"
-    @click.left="handleLeftClick"
-    @click.right="handleRightClick"
-    @click.middle="handleMiddleClick"
-    target="_blank"
-    >tasks2,3</a
-  >
-  &nbsp;
-  <p v-if="isCtrlPressed">{{ var_2 }}</p>
+  <input v-model="newItem" />
+  <button class="button" @click="addItemEnd">maybe im alone</button>
+  <button class="button" @click="addItemBegin">or not</button>
+  <ul v-for="(item, index) in items" :key="index">
+    <li>
+      {{ item }}
+    </li>
+  </ul>
 </template>
 <style>
 .button {
