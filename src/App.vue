@@ -2,22 +2,64 @@
 export default {
   data() {
     return {
-      languages: [],
+      choice: "",
+      english: true,
+      russian: false,
+      malagas: false,
     };
   },
-  methods: {},
+  methods: {
+    eng: function () {
+      this.english = true;
+      this.russian = false;
+      this.malagas = false;
+    },
+    rus: function () {
+      this.english = false;
+      this.russian = true;
+      this.malagas = false;
+    },
+    mal: function () {
+      this.english = false;
+      this.russian = false;
+      this.malagas = true;
+    },
+  },
 };
 </script>
 <template>
-  <input class="button" type="checkbox" v-model="languages" value="никакой" />
-  <p>никакой</p>
-  <input class="button" type="checkbox" v-model="languages" value="русский" />
-  <p>русский</p>
-  <input class="button" type="checkbox" v-model="languages" value="армянский" />
-  <p>армянский</p>
-  <ul v-for="elem in languages">
-    <li>{{ elem }}</li>
-  </ul>
+  <p class="button" v-if="english">What is your mother tongue?</p>
+  <p class="button" v-if="russian">Какой ваш родной язык?</p>
+  <p class="button" v-if="malagas">Inona ny fitenin-drazanao?</p>
+  &nbsp;
+  <input
+    class="button"
+    name="radio"
+    type="radio"
+    v-model="choice"
+    value="English"
+    @click="eng"
+  />
+  &nbsp;
+  <input
+    class="button"
+    name="radio"
+    type="radio"
+    v-model="choice"
+    value="Русский"
+    @click="rus"
+  />
+  &nbsp;
+  <input
+    class="button"
+    name="radio"
+    type="radio"
+    v-model="choice"
+    value="Малагасийский"
+    @click="mal"
+  />
+  &nbsp;
+  <p class="button">{{ choice }}</p>
 </template>
 <style>
 .button {
