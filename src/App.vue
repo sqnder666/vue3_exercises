@@ -1,20 +1,19 @@
 <script>
 export default {
   data() {
-    return {
-      isValid: true,
-      isDisabled: true,
-    };
+    return {};
   },
-  methods: {
-    setDone: function () {
-      this.obj.hidden = !this.obj.hidden;
-    },
-  },
+  methods: {},
 };
 </script>
 <template>
- <p class="button" :class="{ active: isValid, valid: isDisabled }">raw 2</p>
+  <p class="button" :style="{ color: 'green', background: 'yellow', fontSize: '30px' }">
+    Задание 1
+  </p>
+  &nbsp; &nbsp; &nbsp;
+  <p class="button" :style="{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '30px' }">
+    Задание 2
+  </p>
 </template>
 <style>
 .button {
