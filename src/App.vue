@@ -3,18 +3,29 @@ export default {
   data() {
     return {
       obj: {
-        done: true,
-        selected: false,
+        hidden: true,
       },
     };
   },
-  methods: {},
-};
+  methods: {
+    setDone: function () {
+      this.obj.hidden = !this.obj.hidden;
+    },
+  },
+}
 </script>
 <template>
-  <p class="button " :class="obj">tfddfdf</p>
+  <button class="button" @click="this.obj.hidden = false">hide 2</button>
+  <button class="button" @click="this.obj.hidden = true">hide 3</button>
+  <button class="button" @click="setDone">{{ obj.hidden ? "show" : "hide" }} 4</button><br />
+  <p>&6hjhjhj;&6hjhjhj;&6hjhjhj;&6hjhjhj;</p>
+  <p :class="obj"> 1</p>
 </template>
 <style>
+
+p.hidden {
+  display: none;
+} 
 
 .button {
     background-color: #293133; 
