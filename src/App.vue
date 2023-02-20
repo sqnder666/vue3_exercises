@@ -2,64 +2,23 @@
 export default {
   data() {
     return {
-      choice: "",
-      english: true,
-      russian: false,
-      malagas: false,
+      gorod: "Выберите город",
     };
   },
-  methods: {
-    eng: function () {
-      this.english = true;
-      this.russian = false;
-      this.malagas = false;
-    },
-    rus: function () {
-      this.english = false;
-      this.russian = true;
-      this.malagas = false;
-    },
-    mal: function () {
-      this.english = false;
-      this.russian = false;
-      this.malagas = true;
-    },
-  },
+  methods: {},
 };
 </script>
 <template>
-  <p class="button" v-if="english">What is your mother tongue?</p>
-  <p class="button" v-if="russian">Какой ваш родной язык?</p>
-  <p class="button" v-if="malagas">Inona ny fitenin-drazanao?</p>
+  <select v-model="gorod">
+    <option class="button">Симферополь</option>
+    <option class="button">Сызрань</option>
+    <option class="button">Киев</option>
+    <option class="button">Россия</option>
+    <option class="button">Крым</option>
+    <option class="button">Ривия</option>
+  </select>
   &nbsp;
-  <input
-    class="button"
-    name="radio"
-    type="radio"
-    v-model="choice"
-    value="English"
-    @click="eng"
-  />
-  &nbsp;
-  <input
-    class="button"
-    name="radio"
-    type="radio"
-    v-model="choice"
-    value="Русский"
-    @click="rus"
-  />
-  &nbsp;
-  <input
-    class="button"
-    name="radio"
-    type="radio"
-    v-model="choice"
-    value="Малагасийский"
-    @click="mal"
-  />
-  &nbsp;
-  <p class="button">{{ choice }}</p>
+  <p>{{ gorod }}</p>
 </template>
 <style>
 .button {
