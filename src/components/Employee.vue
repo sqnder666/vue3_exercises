@@ -6,23 +6,23 @@ export default {
         }
     },
     methods: {
-        handle() {
-            this.$emit('be');
+        handleName() {
+            this.$emit('be', 'atomic heart');
         },
-        handle1() {
-            this.$emit('be2');
-        },
+        handleSalary(){
+            this.$emit('be2', 'pudge pudges', '95');
+        }
     }
 }
 </script>
 
 <template>
-<button class="button" @click="handle">pudge</button>
-<button class="button" @click="handle1">tp_na_ame</button>
+<button class="button" @click="handleName">Имя</button>
+<button class="button" @click="handleSalary">Зарплата</button>
 </template>
 
 <style>
-p,li,ul {
+p{
     font-size: 1cm;
     text-align: center;
   text-shadow:
@@ -31,7 +31,7 @@ p,li,ul {
   color: white;
   transition: all .5s;
 }
-p,li,ul:hover {
+p:hover {
     text-align: center;
     font-size: 1.2cm;
   text-shadow:

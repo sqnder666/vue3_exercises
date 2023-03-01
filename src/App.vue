@@ -10,18 +10,18 @@ export default {
     Employee
   },
   methods: {
-    pudge() {
-      alert('BM, RAPIRA, DAGON');
+    developerName(name) {
+      console.log(name);
     },
-    tp_na_ame(){
-      alert('FLASKA, MANGO, CLARITY')
+    developerSalary(name, salary){
+console.log(name, salary);
     }
   }
 }
 </script>
 
 <template>
-<Employee @be="pudge" @be2="tp_na_ame" />
+<Employee @show="developerName" @show1="developerSalary"/>
 </template>
 
 <style>
