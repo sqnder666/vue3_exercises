@@ -26,14 +26,27 @@ export default {
     Employee
   },
   methods: {
-    remove(id) {
-      this.developers = this.developers.filter((developer) => {
-        return developer.id !== id;
-      })
+    change(id, name, surn){
+      this.developers = this.developers.map((developer) => {
+        if(developer.id === id){
+          developer.name = name;
+          developer.surn = surn;
+        }
+        return developer;
+      });
     }
   }
 }
 </script>
+
+<template>
+<Employee v-for   ="developer in developers"
+		:id     ="developer.id"
+		:name   ="developer.name"
+		:surn   ="developer.surn"
+		:key    ="developer.id"
+    @change="change"/>
+</template>
 
 <style>
 .button {
