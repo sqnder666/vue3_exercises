@@ -23,7 +23,7 @@ p{
     1px 1px 1px black,
     -1px 1px 1px black;
   color: white;
-  transition: all .5s;
+  transition: all .6s;
 }
 
 p:hover {
