@@ -2,22 +2,54 @@
 export default {
   data() {
     return {
-      value: ["1", "2", "3", "4", "5"],
+      customers: [
+        {
+          id: 1,
+          name: "Ilya",
+          value: 10,
+          age: 12,
+        },
+        {
+          id: 2,
+          name: "Ilya2",
+          value: 15,
+          age: 13,
+        },
+        {
+          id: 3,
+          name: "Ilya3",
+          value: 20,
+          age: 99,
+        },
+      ],
     };
   },
   methods: {
-    removeItem: function (index) {
-      this.value.splice(index, 1);
+    removeItem: function (id) {
+      this.customers = this.customers.filter((customer) => {
+        return customer.id !== id;
+      });
     },
   },
 };
 </script>
 <template>
-  <ul>
-    <li v-for="(item, index) in value" :key="index">
-      <button class="button" @click="removeItem(index)">{{ item }}</button>
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Age</th>
+      <th>Remove</th>
+    </tr>
+    <tr v-for="customer in customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.value }}</td>
+      <td>{{ customer.age }}</td>
+      <td><button class="button" @click="removeItem(customer.id)">remove</button></td>
+    </tr>
+  </table>
 </template>
 <style>
 .button {
