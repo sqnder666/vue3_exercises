@@ -2,27 +2,20 @@
 export default {
   data() {
     return {
-      newItem: "",
-      items: ["1", "2", "3", "4", "5"],
+      value: ["1", "2", "3", "4", "5"],
     };
   },
   methods: {
-    addItemEnd: function () {
-      this.items.push(this.newItem);
-    },
-    addItemBegin: function () {
-      this.items.unshift(this.newItem);
+    removeItem: function (index) {
+      this.value.splice(index, 1);
     },
   },
 };
 </script>
 <template>
-  <input v-model="newItem" />
-  <button class="button" @click="addItemEnd">maybe im alone</button>
-  <button class="button" @click="addItemBegin">or not</button>
-  <ul v-for="(item, index) in items" :key="index">
-    <li>
-      {{ item }}
+  <ul>
+    <li v-for="(item, index) in value" :key="index">
+      <button class="button" @click="removeItem(index)">{{ item }}</button>
     </li>
   </ul>
 </template>
