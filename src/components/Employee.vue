@@ -1,38 +1,24 @@
 <script>
-import Employee from './components/Employee.vue'
 export default {
-  data() {
-    return {
-      developers: [
-        {
-          id: 1,
-          name: 'Ilya',
-          salary: 10,
-          age: 12
+    emits: ['be', 'be2'],
+    data() {
+        return {
+        }
+    },
+    methods: {
+        handle() {
+            this.$emit('be');
         },
-        {
-          id: 2,
-          name: 'Ilya2',
-          salary: 15,
-          age: 13
+        handle1() {
+            this.$emit('be2');
         },
-        {
-          id: 3,
-          name: 'Ilya3',
-          salary: 20,
-          age: 99
-        },
-      ],
     }
-  },
-  components: {
-    Employee
-  }
 }
 </script>
 
 <template>
-<Employee v-for="developer in developers" :name="developer.name" :salary="developer.salary" :age="developer.age" :key="developer.id" />
+<button class="button" @click="handle">pudge</button>
+<button class="button" @click="handle1">tp_na_ame</button>
 </template>
 
 <style>

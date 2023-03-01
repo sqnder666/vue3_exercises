@@ -3,19 +3,25 @@ import Employee from './components/Employee.vue'
 export default {
   data() {
     return {
-      name: 'atomic heart',
-      surname: '5554454545',
-      age: '3423428934289',
+      
     }
   },
   components: {
     Employee
+  },
+  methods: {
+    pudge() {
+      alert('BM, RAPIRA, DAGON');
+    },
+    tp_na_ame(){
+      alert('FLASKA, MANGO, CLARITY')
+    }
   }
 }
 </script>
 
 <template>
-<Employee :name="name" :surname="surname" :age="age"/>
+<Employee @be="pudge" @be2="tp_na_ame" />
 </template>
 
 <style>
