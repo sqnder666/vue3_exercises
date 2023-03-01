@@ -1,5 +1,6 @@
 <script>
 import Employee from './components/Employee.vue'
+import EmployeeForm from './components/EmployeeForm.vue'
 export default {
   data() {
     return {
@@ -23,16 +24,13 @@ export default {
     }
   },
   components: {
-    Employee
+    Developer, EmployeeForm
   },
   methods: {
-    change(id, name, surn){
-      this.developers = this.developers.map((developer) => {
-        if(developer.id === id){
-          developer.name = name;
-          developer.surn = surn;
-        }
-        return developer;
+    add(name, surn){
+      let id = this.developers.length + 1;
+      this.developers.push({
+        id, name, surn
       });
     }
   }
@@ -40,12 +38,7 @@ export default {
 </script>
 
 <template>
-<Employee v-for   ="developer in developers"
-		:id     ="developer.id"
-		:name   ="developer.name"
-		:surn   ="developer.surn"
-		:key    ="developer.id"
-    @change="change"/>
+<EmployeeForm @add="add"/>
 </template>
 
 <style>
