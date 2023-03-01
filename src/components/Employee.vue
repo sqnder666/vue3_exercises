@@ -1,6 +1,11 @@
 <script>
 export default {
-    emits: ['be'],
+    props: {
+        id: Number,
+        name: String,
+        surn: String,
+    },
+    emits: ['remove'],
     data() {
         return {
         }
@@ -11,7 +16,10 @@ export default {
 </script>
 
 <template>
-<button class="button" @click="$emit('be', 'atomic heart')">Имя</button>
+    <p>{{ name }} {{ surn }}</p>
+    <button class="button" @click="$emit('remove', id)">
+        remove
+    </button>
 </template>
 
 <style>

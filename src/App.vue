@@ -3,23 +3,37 @@ import Employee from './components/Employee.vue'
 export default {
   data() {
     return {
-      
+      developers: [
+        {
+          id: 1,
+          name: 'ilya',
+          surn: 'redd'
+        },
+        {
+          id: 2,
+          name: 'trippie',
+          surn: 'rudov'
+        },
+        {
+          id: 3,
+          name: 'playboi',
+          surn: 'thugg'
+        },
+      ],
     }
   },
   components: {
     Employee
   },
   methods: {
-    developerName(name) {
-      alert(name);
-    },
+    remove(id) {
+      this.developers = this.developers.filter((developer) => {
+        return developer.id !== id;
+      })
+    }
   }
 }
 </script>
-
-<template>
-<Employee @show="developerName"/>
-</template>
 
 <style>
 .button {
