@@ -1,23 +1,38 @@
 <script>
+import Employee from './components/Employee.vue'
 export default {
-    props: {
-        name: String, 
-        salary: Number, 
-        age: Number
-    },
-    data() {
-        return {
-        }
+  data() {
+    return {
+      developers: [
+        {
+          id: 1,
+          name: 'Ilya',
+          salary: 10,
+          age: 12
+        },
+        {
+          id: 2,
+          name: 'Ilya2',
+          salary: 15,
+          age: 13
+        },
+        {
+          id: 3,
+          name: 'Ilya3',
+          salary: 20,
+          age: 99
+        },
+      ],
     }
+  },
+  components: {
+    Employee
+  }
 }
 </script>
 
 <template>
-<p>{{ name }} 
-<br>
-{{ salary }} 
-<br>
-{{ age }}</p>
+<Employee v-for="developer in developers" :name="developer.name" :salary="developer.salary" :age="developer.age" :key="developer.id" />
 </template>
 
 <style>
